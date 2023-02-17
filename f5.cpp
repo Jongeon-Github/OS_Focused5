@@ -1,10 +1,9 @@
 /*
-* Filename: f4.cpp
+* Filename: f5.cpp
 * Project: Focused Assignment 4
 * By: Jongeon Lee
-* Date: Feb 11, 2023
-* Description: Write a program that gets integers from the user
-               and determines which is the lowest.
+* Date: Feb 22, 2023
+* Description: Revise Focused 4 to use functions.
 */
 
 #include <stdio.h>
