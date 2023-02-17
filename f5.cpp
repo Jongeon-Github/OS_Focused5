@@ -73,3 +73,18 @@ int getNum(void)
     }
     return number;
 }
+
+/*
+* Function: modifyArrayValues()
+* Description: This replaces getting the user values in main.
+* Parameters: 
+* Returns: Nothing
+*/
+
+
+/*
+* Function: minArrayValue()
+* Description: This is for finding the minimum value and its index.
+* Parameters: 
+* Returns: The index which is the minimum value.
+*/
