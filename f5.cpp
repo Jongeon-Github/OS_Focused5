@@ -1,6 +1,6 @@
 /*
 * Filename: f5.cpp
-* Project: Focused Assignment 4
+* Project: Focused Assignment 5
 * By: Jongeon Lee
 * Date: Feb 22, 2023
 * Description: Revise Focused 4 to use functions.
@@ -9,44 +9,23 @@
 #include <stdio.h>
 
 int getNum(void);
+int modifyArrayValues(int inArray[10]);
+int minArrayValue(int inArray[10]);
 
 int main()
 {
-    /*
-    * These are local variables
-    * int i means counter.
-    * int myArray means an array of 10 initialized to 0.
-    * int minValue means a variable holding the minimum value of user inputs.
-    *   - initial value 2,147,483,647 is maxmum value of int.
-    * int minIndex means a variable holding the array index's minimum value.
-    */
-    int i = 0;
-    int myArray[10] = { 0 };
-    int minValue = 2147483647;
+    int getArray[10] = { 0 };
     int minIndex = 0;
+    modifyArrayValues(getArray);
+    minIndex = minArrayValue(getArray);
 
-    while (i < 10)
-    {
-        printf("Please input the value at index %d in the array: ", i);
-        myArray[i] = getNum();
-
-        /*
-        * This if statement is to find the minimum value in the array.
-        */
-        if (myArray[i] < minValue)
-        {
-            minValue = myArray[i];
-            minIndex = i;
-        }
-        i++;
-    }
-    printf("The lowest value is %d at index %d", minValue, minIndex);
+    printf("The lowest value is %d at index %d", getArray[minIndex], minIndex);
 
     return 0;
 }
 
 /*
-* Function: getNum()
+* Function: getNum(void)
 * Description: This function takes in user input and outputs it as a variable.
 * Parameters: int void
 * Returns: int number: the entered number is printed.
@@ -75,16 +54,38 @@ int getNum(void)
 }
 
 /*
-* Function: modifyArrayValues()
+* Function: modifyArrayValues(int inArray[10])
 * Description: This replaces getting the user values in main.
-* Parameters: 
+* Parameters: int inArray[10] - integer array of 10 numbers elements.
 * Returns: Nothing
 */
-
+int modifyArrayValues(int inArray[10])
+{
+    for (int i = 0; i < 10; i++)
+    {
+        printf("Please input the value at index %d in the array: ", i);
+        inArray[i] = getNum();
+    }
+    return 0;
+}
 
 /*
-* Function: minArrayValue()
+* Function: minArrayValue(int inArray[10)
 * Description: This is for finding the minimum value and its index.
-* Parameters: 
+* Parameters: int inArray[10] - integer array of 10 numbers elements.
 * Returns: The index which is the minimum value.
 */
+int minArrayValue(int inArray[10])
+{
+    int typemaxValue = 2147483647;
+    int index = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        if ( typemaxValue >= inArray[i])
+        {
+            typemaxValue = inArray[i];
+            index = i;
+        }
+    }
+    return index;
+}
