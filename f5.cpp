@@ -2,25 +2,26 @@
 * Filename: f5.cpp
 * Project: Focused Assignment 5
 * By: Jongeon Lee
-* Date: Feb 22, 2023
+* Date: Feb 24, 2023
 * Description: Revise Focused 4 to use functions.
 */
 
 #include <stdio.h>
 
 int getNum(void);
-int modifyArrayValues(int inArray[10]);
-int minArrayValue(int inArray[10]);
+int modifyArrayValues(int inArray[], int length);
+int minArrayValue(int inArray[], int length);
 
 int main()
 {
-    int getArray[10] = { 0 };
+    const int kLength = 10;
+    int getArray[kLength] = { 0 };
     int minIndex = 0;
-    modifyArrayValues(getArray);
-    minIndex = minArrayValue(getArray);
-
+    modifyArrayValues(getArray, kLength);
+    minIndex = minArrayValue(getArray, kLength);
+    
     printf("The lowest value is %d at index %d", getArray[minIndex], minIndex);
-
+    
     return 0;
 }
 
@@ -59,9 +60,9 @@ int getNum(void)
 * Parameters: int inArray[10] - integer array of 10 numbers elements.
 * Returns: Nothing
 */
-int modifyArrayValues(int inArray[10])
+int modifyArrayValues(int inArray[], int length)
 {
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < length; i++)
     {
         printf("Please input the value at index %d in the array: ", i);
         inArray[i] = getNum();
@@ -75,11 +76,11 @@ int modifyArrayValues(int inArray[10])
 * Parameters: int inArray[10] - integer array of 10 numbers elements.
 * Returns: The index which is the minimum value.
 */
-int minArrayValue(int inArray[10])
+int minArrayValue(int inArray[], int length)
 {
     int typemaxValue = 2147483647;
     int index = 0;
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < length; i++)
     {
         if ( typemaxValue >= inArray[i])
         {
