@@ -55,10 +55,12 @@ int getNum(void)
 }
 
 /*
-* Function: modifyArrayValues(int inArray[10])
+* Function: modifyArrayValues(int inArray[], int length)
 * Description: This replaces getting the user values in main.
-* Parameters: int inArray[10] - integer array of 10 numbers elements.
-* Returns: Nothing
+* Parameters:
+    - int inArray[] - integer array.
+    - int length - integer value of length.
+    * Returns: Nothing
 */
 int modifyArrayValues(int inArray[], int length)
 {
@@ -71,9 +73,11 @@ int modifyArrayValues(int inArray[], int length)
 }
 
 /*
-* Function: minArrayValue(int inArray[10)
+* Function: minArrayValue(int inArray[], int length)
 * Description: This is for finding the minimum value and its index.
-* Parameters: int inArray[10] - integer array of 10 numbers elements.
+* Parameters:
+    - int inArray[] - integer array.
+    - int length - integer value of length.
 * Returns: The index which is the minimum value.
 */
 int minArrayValue(int inArray[], int length)
